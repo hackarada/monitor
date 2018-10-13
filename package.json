@@ -1,0 +1,31 @@
+{
+  "name": "monitor",
+  "version": "1.0.0",
+  "description": "Node Software version Monitoring",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cheerio": "^1.0.0-rc.2",
+    "express": "^4.16.4",
+    "mongodb": "^2.2.16"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hackarada/monitor.git"
+  },
+  "author": "Ermias",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hackarada/monitor/issues"
+  },
+  "homepage": "https://github.com/hackarada/monitor#readme"
+}
