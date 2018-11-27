@@ -1,22 +1,25 @@
 {
   "name": "monitor",
   "version": "1.0.0",
-  "description": "Node Software version Monitoring",
+  "description": "version Monitoring",
   "main": "server.js",
   "scripts": {
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "body-parser": "^1.18.3",
     "cheerio": "^1.0.0-rc.2",
+    "event-stream": "^3.3.4",
     "express": "^4.16.4",
-    "mongodb": "^2.2.16"
+    "mongodb": "^2.2.36",
+    "readline": "^1.3.0",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.2"
   },
   "devDependencies": {
-    "nodemon": "^1.18.4"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "nodemon": "^1.18.6"
   },
   "repository": {
     "type": "git",
