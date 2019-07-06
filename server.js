@@ -67,7 +67,7 @@ request(array[i], function(err, resp, html) {
 }
 
 
-// axios.post('https://a.slaack.com/services/T029XaV5N2/BE7TNQUsLV/Nat4DsayjngVfsaXewYuP2MAS1e0', {
+// axios.post('https://a.slaack.com', {
 //         text: 'I hope this works -check statusCode'})
 // .then((res) => {
 //  console.log('statusCode:', res.status)
