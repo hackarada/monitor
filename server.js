@@ -1,71 +1,55 @@
-const express = require('express');
+const express = require("express");
 //const MongoClient = require('mongodb').MongoClient;
-var request = require('request');
-const bodyParser = require('body-parser');
-const rp = require('request-promise');
-const readline = require('readline');
-const fs = require('fs');
-const cheerio = require('cheerio');
-const axios = require('axios')
-
+var request = require("request");
+const bodyParser = require("body-parser");
+const rp = require("request-promise");
+const readline = require("readline");
+const fs = require("fs");
+const cheerio = require("cheerio");
+const axios = require("axios");
 
 const app = express();
 const port = process.env.PORT || 9000;
 
+var array = fs
+  .readFileSync("list.data")
+  .toString()
+  .split("\n");
 
-var array = fs.readFileSync('list.data').toString().split("\n");
-
-async function check(Tline) {
-
-}
-
+async function check(Tline) {}
 
 app.listen(port, () => {
-    console.log('live on ' + port);
+  console.log("live on " + port);
 });
-
-
-
-
-
-
-
-
 
 for (i in array) {
-       console.log("Tline");
+  console.log("Tline");
 
-    console.log(array[i]);
+  console.log(array[i]);
 
+  request(array[i], function(err, resp, html) {
+    if (!err) {
+      const $ = cheerio.load(html);
+      //  console.log(html);
+      console.log($("extract").attr("img"));
+    }
+  });
 
-
-request(array[i], function(err, resp, html) {
-        if (!err){
-          const $ = cheerio.load(html);
-        //  console.log(html); 
-          console.log($('extract').attr('img'))
-      }
-});
-
-
-
-
-//     const options = {
-//         uri: "https://www.facebook.com/",
-//         transform: function(body) {
-//             return cheerio.load(body);
-//         }
-//     };
-//     rp(options)
-//         .then(($) => {
-//             console.log($('extract').attr('img'))
-//         })
-//         .catch((err) => {
-//             console.log(err);
-//         });
-// console.log(array[i]);        
+  //     const options = {
+  //         uri: "https://www.me.com/",
+  //         transform: function(body) {
+  //             return cheerio.load(body);
+  //         }
+  //     };
+  //     rp(options)
+  //         .then(($) => {
+  //             console.log($('extract').attr('img'))
+  //         })
+  //         .catch((err) => {
+  //             console.log(err);
+  //         });
+  // console.log(array[i]);
 }
-
 
 // axios.post('https://a.slaack.com', {
 //         text: 'I hope this works -check statusCode'})
